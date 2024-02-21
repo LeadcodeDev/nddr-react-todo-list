@@ -8,8 +8,10 @@ export default function TaskForm(): ReactElement {
   function handleAddTask(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    addTask(newTask)
-    setNewTask('')
+    if (newTask.length) {
+      addTask(newTask)
+      setNewTask('')
+    }
   }
 
   return (
