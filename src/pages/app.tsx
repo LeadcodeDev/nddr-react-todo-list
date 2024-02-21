@@ -5,6 +5,7 @@ import useTask from '../hooks/task.ts'
 
 export default function App(): ReactElement {
   const { tasks } = useTask()
+  
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-100">
       <div className="w-full max-w-xl mx-auto">
