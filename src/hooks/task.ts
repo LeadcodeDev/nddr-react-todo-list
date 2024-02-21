@@ -23,6 +23,16 @@ export default function useTask() {
     setTasks(copy)
   }
 
+  function updateTask(uid: string, content: string) {
+    const copy = [...tasks]
+    const task = copy.find((task: Task) => task.uid === uid)
+
+    if (task) {
+      task.content = content
+      setTasks(copy)
+    }
+  }
+
   function toggleCompleteTask(uid: string) {
     const copyTask = [...tasks]
     const task = copyTask.find((task: Task) => task.uid === uid)
@@ -36,7 +46,8 @@ export default function useTask() {
   return {
     tasks,
     addTask,
+    updateTask,
     removeTask,
-    toggleCompleteTask
+    toggleCompleteTask,
   }
 }
